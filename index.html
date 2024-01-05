@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>PORTFOLIO</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!--body-->
+        <header class="header">
+            <a href="#" class="logo">Pooja</a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">ABOUT</a>
+                <a href="#services">EDUCATION</a>
+                <a href="#portfolio">PROJECTS</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </header>
+        <section class="home" id="home">
+            <div class="home-content">
+                <h3>Hello,It's Me</h3>
+                <h1>Pooja</h1>
+                <h3>And I'm a MCA student at RNS Institute of Technology</h3>
+                <a href="1RN22MC040 POOJA.pdf" class="btn">Download CV</a>
+            </div>
+            <div class="home-img">
+                <img src="profile .png" alt="">
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="https://wallpaperaccess.com/full/1385382.jpg" alt="">
+            </div>
+            <div class="about-content">
+                <h2 class="heading">About<span>Me</span></h2>
+                <p>Hello, I am Pooja , a dedicated MCA student with a fervent enthusiasm for technology. My journey into the world of computing began long ago when I discovered my fascination for programming and its transformative potential. Since then, I have been on a relentless quest to expand my knowledge and skills in various domains of technology. </p>
+            </div>
+        </section>
+        <section class="services"id="services">
+            <h2 class="heading">Academic <span>Qualification</span></h2>
+
+            <div class="services-container">
+                <div class="services-box">
+                    <i class='bx bx-book-alt'></i>
+                    <h3>12th Standard/PUC</h3>
+                    <p>Percentage : 57%<br> 
+                         College Name : National PU College<br> 
+                         Completed : 2019 <br></p>
+                </div>
+        
+                <div class="services-box">
+                    <i class='bx bxs-graduation'></i>
+                    <h3> Bachelor of Computer Application</h3>
+                    <p>Percentage : 72% <br>
+                        College Name: Sri Krishna Degree College<br>
+                        Graduation : 2022 <br></p>
+                </div>
+            
+                <div class="services-box">
+                    <i class='bx bx-desktop' ></i>
+                    <h3>Master of Computer Application</h3>
+                    <p>[Pursuing] <br> 
+                        College Name: RNS Institute of Technology<br>
+                        Graduation : [Expected 2024]<br>
+                        </p>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio"id="portfolio">
+            <h2 class="heading">Latest<span>Project</span></h2>
+            <div class="portfolio-container">
+                <div class="portfolio-box">
+                    <img src="Pharmcy.jpg" height ="490px" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Covid Crusher</h4>
+                        <p>Covid crusher is a standalone application which was used to monitor and manage entire functionaity of a Pharmacy. The project was developed using VB.Net and Sql.</p>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="Smart Home.jpg" height="490px" > 
+                    <div class="portfolio-layer">
+                        <h4>Smart Home </h4>
+                        <p>Smart Home project can be used to control various home appliances remotely over a application or mobile responsive.</p>
+                    </div>
+                </div>
+        </section>
+        <section class="contact"id="contact">
+            <h2 class="heading">Contact<span>ME!</span></h2>
+
+            <form action="#" name="submit-to-google-sheet">
+                <div class="input-box">
+                    <input type="text" name="Name" placeholder="Full Name">
+                    <input type="email" name="Email Address" placeholder="Email Address">
+                </div>
+                <div class="input-box">
+                    <input type="number" name="Mobile Number"placeholder="Mobile Number">
+                    <input type="text"name="Email Subject" placeholder="Email Subject">
+                </div>
+                <textarea name="Your Message" id="" cols="30" rows="10"placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message"class="btn">
+            </form>
+            <span id="msg"></span>
+        </section>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="script.js"></script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzFPVGxI-75Ilkm2z_EMuI9ubPlp8-7dQmMzzdPiIunLPPzj3bcY1ohMdT_DfZ3zPwhTA/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg=document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML="Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML=""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+        
+    </body>
+</html>
